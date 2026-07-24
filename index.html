@@ -73,66 +73,141 @@
         </div>
       </section>
 
-      <section class="statement" aria-label="DayPixel 제작 원칙">
-        <div class="statement-track">
-          <span>Plan</span><i></i><span>Design</span><i></i><span>Build</span><i></i>
-          <span>Ship</span><i></i><span>Improve</span><i></i><span>Plan</span><i></i>
-          <span>Design</span><i></i><span>Build</span><i></i><span>Ship</span><i></i>
+      <section class="capability-strip" aria-label="DayPixel이 하는 일">
+        <div class="shell capability-grid">
+          <p><span>01</span> Product strategy</p>
+          <p><span>02</span> Interface design</p>
+          <p><span>03</span> Mobile &amp; web</p>
         </div>
       </section>
 
       <section class="product-section" id="product" aria-labelledby="product-title">
-        <div class="shell product-grid">
-          <div class="section-kicker">
-            <span>01</span>
-            <span>Our product</span>
-          </div>
-          <div class="product-copy">
-            <div class="product-name">
-              <img
-                src="assets/juseomjuseom-mark.png"
-                width="56"
-                height="56"
-                alt="주섬주섬 앱 심볼"
-              >
-              <span>주섬주섬</span>
+        <div class="shell product-shell">
+          <div class="product-intro">
+            <div class="section-kicker">
+              <span>01</span>
+              <span>Our first product</span>
             </div>
-            <h2 id="product-title">흩어진 관심을,<br>한곳에.</h2>
-            <p>
-              사고 싶은 것, 보고 싶은 영상, 가보고 싶은 장소까지. 링크를 공유하면
-              필요한 정보를 찾아 보기 좋은 카드로 정리합니다.
-            </p>
-            <ul class="product-tags" aria-label="주섬주섬 지원 기능">
-              <li>상품</li>
-              <li>장소</li>
-              <li>영상</li>
-              <li>읽을거리</li>
-              <li>iOS · Android</li>
-            </ul>
-            <div class="product-actions">
-              <a
-                class="button button-light"
-                href="https://apps.apple.com/kr/app/id6764675472"
-                target="_blank"
-                rel="noreferrer"
-              >
-                App Store에서 보기 <span>↗</span>
-              </a>
-              <a class="button button-ghost" href="support.html">앱 지원</a>
+            <div class="product-heading">
+              <div class="product-name">
+                <img
+                  src="assets/juseomjuseom-mark.png"
+                  width="56"
+                  height="56"
+                  alt="주섬주섬 앱 심볼"
+                >
+                <span>주섬주섬</span>
+              </div>
+              <h2 id="product-title">마음에 둔 모든 것을<br>다시 찾기 쉽게.</h2>
             </div>
           </div>
-          <div class="product-visual">
-            <div class="visual-caption">
-              <span>Save anything.</span>
-              <span>Find it again.</span>
+          <div class="product-body">
+            <div class="product-copy">
+              <p>
+                사고 싶은 물건, 나중에 볼 영상, 가보고 싶은 장소까지.
+                링크 하나만 공유하면 주섬주섬이 필요한 정보를 찾아 정리합니다.
+              </p>
+              <ul class="product-points" aria-label="주섬주섬 주요 기능">
+                <li><span>01</span>링크에서 정보를 자동으로 추출</li>
+                <li><span>02</span>내용에 맞는 카테고리로 정리</li>
+                <li><span>03</span>검색과 메모로 다시 빠르게 발견</li>
+              </ul>
+              <div class="product-actions">
+                <a
+                  class="button button-light"
+                  href="https://apps.apple.com/kr/app/id6764675472"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  App Store <span>↗</span>
+                </a>
+                <a class="button button-ghost" href="support.html">앱 지원</a>
+              </div>
             </div>
-            <img
-              src="assets/juseomjuseom-home.png"
-              width="945"
-              height="2048"
-              loading="lazy"
-              alt="주섬주섬 앱에서 저장한 링크를 카드로 정리한 화면"
+            <div
+              class="product-stage"
+              role="group"
+              aria-label="주섬주섬 앱 화면 예시"
             >
+              <div class="stage-note stage-note-top">
+                <span>Save</span>
+                <strong>마음에 들면 바로 담고</strong>
+              </div>
+              <div class="phone-mockup">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <div class="mock-header">
+                    <div class="mock-brand">
+                      <img
+                        src="assets/juseomjuseom-mark.png"
+                        width="28"
+                        height="28"
+                        alt=""
+                      >
+                      <strong>주섬주섬</strong>
+                    </div>
+                    <span class="mock-avatar"></span>
+                  </div>
+                  <div class="mock-summary">
+                    <small>오늘도 차곡차곡</small>
+                    <strong>12개 모아뒀어요</strong>
+                    <div>
+                      <span>카테고리 4</span>
+                      <span>링크 12</span>
+                    </div>
+                  </div>
+                  <div class="mock-search">담아둔 것 검색</div>
+                  <div class="mock-tabs">
+                    <span class="active">전체</span>
+                    <span>상품</span>
+                    <span>장소</span>
+                    <span>영상</span>
+                  </div>
+                  <div class="mock-list-title">
+                    <strong>최근에 담은 것들</strong>
+                    <span>12</span>
+                  </div>
+                  <div class="mock-card-grid">
+                    <article class="mock-card">
+                      <div class="mock-art mock-art-light">
+                        <i></i>
+                      </div>
+                      <small>제품</small>
+                      <strong>오래 두고 쓸 조명</strong>
+                      <span>메모를 남겨뒀어요</span>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-art mock-art-place">
+                        <i></i>
+                      </div>
+                      <small>장소</small>
+                      <strong>주말에 걷고 싶은 곳</strong>
+                      <span>서울 · 산책</span>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-art mock-art-book">
+                        <i></i><i></i>
+                      </div>
+                      <small>읽을거리</small>
+                      <strong>천천히 읽을 책</strong>
+                      <span>다음 주에 읽기</span>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-art mock-art-video">
+                        <i></i>
+                      </div>
+                      <small>영상</small>
+                      <strong>나중에 볼 이야기</strong>
+                      <span>18분</span>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="stage-note stage-note-bottom">
+                <span>Find</span>
+                <strong>필요할 때 다시 찾아요</strong>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -144,7 +219,7 @@
               <span>02</span>
               <span>How we work</span>
             </div>
-            <h2 id="principles-title">좋은 제품은<br>사용할수록 단순합니다.</h2>
+            <h2 id="principles-title">쓰는 사람에게는<br>단순해야 합니다.</h2>
           </div>
           <ol class="principle-list">
             <li>
@@ -213,12 +288,15 @@
       </section>
 
       <section class="contact-section" aria-labelledby="contact-title">
-        <div class="shell">
+        <div class="shell contact-grid">
           <p>Have something useful in mind?</p>
           <h2 id="contact-title">다음에 필요한 것을<br>함께 이야기해요.</h2>
-          <a href="mailto:eunhafactory@daypixel.kr">
-            eunhafactory@daypixel.kr <span>↗</span>
-          </a>
+          <div class="contact-meta">
+            <span>New products · Partnerships · Questions</span>
+            <a href="mailto:eunhafactory@daypixel.kr">
+              eunhafactory@daypixel.kr <span>↗</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>
