@@ -27,3 +27,41 @@ test('DayPixel legal pages are public static documents with valid local links', 
   assert.match(privacy, /30일/);
   assert.match(readFileSync(resolve(root, 'data-deletion.html'), 'utf8'), /비밀번호, 인증 코드, 로그인 토큰은 보내지 마세요/);
 });
+
+test('Hanadul distinguishes media consent, partial results and retained anonymous cost records', () => {
+  const privacy = readFileSync(resolve(root, 'privacy.html'), 'utf8');
+  const terms = readFileSync(resolve(root, 'terms.html'), 'utf8');
+  const deletion = readFileSync(resolve(root, 'data-deletion.html'), 'utf8');
+  for (const html of [privacy, terms, deletion]) {
+    assert.match(html, /미디어.*동의/);
+    assert.match(html, /이미.*(?:외부|Google Gemini API).*전송/);
+    assert.match(html, /Instagram 연결(?: 자체)?(?:은|는|과).*유지/);
+  }
+  for (const html of [privacy, terms]) {
+    assert.match(html, /영상과 그 안의 음성/);
+    assert.match(html, /받은함에서 <strong>미디어 추가 분석<\/strong>을 직접 요청/);
+    assert.match(html, /별도로 보낸 사진·음성 메시지/);
+    assert.match(html, /본문과 미디어의 확보 상태/);
+  }
+  for (const html of [privacy, deletion]) {
+    assert.match(html, /서명된 미디어 주소.*서버 전용/);
+    assert.match(html, /24시간.*일일 정리/);
+    assert.match(html, /최대 약 48시간/);
+    assert.match(html, /영구 저장하지 않고.*메모리/);
+    assert.match(html, /AI 예산 예약액과 사용량/);
+    assert.match(html, /사용자 식별값을 제거/);
+    assert.match(html, /익명 비용 집계/);
+    assert.match(html, /UTC 집계일 기준으로 30일을 초과/);
+    assert.match(html, /즉시 삭제.*(?:보장하지|보장하는 의미는 아닙니다)/);
+  }
+  assert.doesNotMatch(privacy, /일반 대화, 이미지·음성, 지원하지 않는 공유/);
+  assert.doesNotMatch(deletion, /개인 사용량 기록을 삭제합니다/);
+});
+
+test('JuseomJuseom-specific notices remain unchanged', () => {
+  const privacy = readFileSync(resolve(root, 'privacy.html'), 'utf8');
+  const deletion = readFileSync(resolve(root, 'data-deletion.html'), 'utf8');
+  assert.match(privacy, /사용자가 담아둔 링크, 제목, 이미지, 가격, 메모, 카테고리와 폴더 정보를\s+저장하고 처리할 수 있습니다\./);
+  assert.match(privacy, /주섬주섬의 서비스 안정성 확인과 광고 제공을 위해 기기 정보, 앱 상호작용, 오류 정보,\s+광고 식별자 등이 사용자의 동의와 기기 설정에 따라 처리될 수 있습니다\./);
+  assert.ok(deletion.includes('<section id="juseom" aria-labelledby="juseom-title"><h2 id="juseom-title">주섬주섬 계정 삭제</h2><p>주섬주섬에 로그인한 뒤 <strong>설정 → 회원 탈퇴</strong>에서 안내에 따라 진행해 주세요. 탈퇴가 완료되면 계정과 연결된 저장 데이터가 삭제됩니다. 앱에서 탈퇴를 진행하기 어렵다면 아래 이메일로 요청해 주세요.</p></section>'));
+});
