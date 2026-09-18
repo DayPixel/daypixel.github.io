@@ -45,6 +45,9 @@ test('Hanadul distinguishes media consent, partial results and retained anonymou
   }
   for (const html of [privacy, deletion]) {
     assert.match(html, /서명된 미디어 주소.*서버 전용/);
+    assert.match(html, /원본 공유 링크 복구를 위한 단일 메시지 식별자는 서버 전용 임시 처리 정보로 보관하며 앱에 노출하지 않습니다/);
+    assert.match(html, /해당 메시지의 링크 확인에만 사용하며 개인의 전체 대화를 조회하지 않습니다/);
+    assert.match(html, /임시 메시지 식별자는 30일 보관하는 중복 방지용 해시와 구분됩니다/);
     assert.match(html, /24시간.*일일 정리/);
     assert.match(html, /최대 약 48시간/);
     assert.match(html, /영구 저장하지 않고.*메모리/);
