@@ -1009,7 +1009,7 @@ img {
 
 .legal-side {
   position: sticky;
-  top: 32px;
+  top: 110px;
   align-self: start;
 }
 
@@ -1066,6 +1066,18 @@ img {
 .legal-content ul {
   margin: 12px 0;
   padding-left: 20px;
+}
+
+.legal-content ol {
+  padding-left: 24px;
+}
+
+.legal-content [id] {
+  scroll-margin-top: 110px;
+}
+
+.legal-content a {
+  overflow-wrap: anywhere;
 }
 
 .info-card {
