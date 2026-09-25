@@ -25,6 +25,8 @@ test('DayPixel legal pages are public static documents with valid local links', 
   assert.match(privacy, /주섬주섬과 하나둘/);
   assert.match(privacy, /Google Gemini API/);
   assert.match(privacy, /30일/);
+  assert.match(privacy, /방문 기록 도우미\(별도 선택\).*앱을 닫은 동안에도/);
+  assert.doesNotMatch(privacy, /백그라운드 위치를 추적하는 기능은 제공하지 않습니다/);
   assert.match(readFileSync(resolve(root, 'data-deletion.html'), 'utf8'), /비밀번호, 인증 코드, 로그인 토큰은 보내지 마세요/);
 });
 
