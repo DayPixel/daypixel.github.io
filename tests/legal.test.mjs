@@ -70,3 +70,16 @@ test('JuseomJuseom-specific notices remain unchanged', () => {
   assert.match(privacy, /주섬주섬의 서비스 안정성 확인과 광고 제공을 위해 기기 정보, 앱 상호작용, 오류 정보,\s+광고 식별자 등이 사용자의 동의와 기기 설정에 따라 처리될 수 있습니다\./);
   assert.ok(deletion.includes('<section id="juseom" aria-labelledby="juseom-title"><h2 id="juseom-title">주섬주섬 계정 삭제</h2><p>주섬주섬에 로그인한 뒤 <strong>설정 → 회원 탈퇴</strong>에서 안내에 따라 진행해 주세요. 탈퇴가 완료되면 계정과 연결된 저장 데이터가 삭제됩니다. 앱에서 탈퇴를 진행하기 어렵다면 아래 이메일로 요청해 주세요.</p></section>'));
 });
+
+test('Google rollout notice separates original records, ephemeral provider content and on-device visits', () => {
+  const privacy = readFileSync(resolve(root, 'privacy.html'), 'utf8');
+  const terms = readFileSync(resolve(root, 'terms.html'), 'utf8');
+  assert.match(privacy, /Google 지도 전환 버전/);
+  assert.match(privacy, /Google의 장소명·주소·좌표를 네이버 검색의 입력으로 사용하지 않습니다/);
+  assert.match(privacy, /Google 좌표를 지오펜스나 방문 상태 파일에 보관하지 않습니다/);
+  assert.match(privacy, /네이버 길찾기 버튼을 누르면.*네이버 지역 검색 API에 전달/);
+  assert.match(privacy, /검색 결과·주소·좌표·링크는 하나둘의 데이터베이스나 기기 캐시에 저장하지 않습니다/);
+  assert.match(privacy, /검색 결과는 AI에 전달하지 않습니다/);
+  assert.doesNotMatch(privacy, /Brave Search/);
+  assert.match(terms, /https:\/\/maps.google.com\/help\/terms_maps\//);
+});
