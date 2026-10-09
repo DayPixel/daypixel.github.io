@@ -1,5 +1,13 @@
 (() => {
   const root = document.documentElement;
+  const english = root.lang === 'en';
+  const text = english ? {
+    reducedLabel: 'Motion reduced by your device settings', reduced: 'Reduced motion',
+    resume: 'Resume motion', pause: 'Pause motion', greeting: 'Poff says hello back!'
+  } : {
+    reducedLabel: '기기 설정에 따라 움직임 줄임', reduced: '움직임 줄임',
+    resume: '움직임 켜기', pause: '움직임 멈추기', greeting: '포프도 반갑게 인사해요!'
+  };
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const toggle = document.querySelector('.motion-toggle');
   const hero = document.querySelector('.hero');
@@ -20,8 +28,8 @@
   function syncMotion() {
     root.classList.toggle('motion-paused', paused() || document.hidden || dialog.open);
     toggle.setAttribute('aria-pressed', String(paused()));
-    toggle.setAttribute('aria-label', reducedMotion.matches ? '기기 설정에 따라 움직임 줄임' : paused() ? '움직임 켜기' : '움직임 멈추기');
-    toggle.querySelector('span').textContent = reducedMotion.matches ? '움직임 줄임' : paused() ? '움직임 켜기' : '움직임 멈추기';
+    toggle.setAttribute('aria-label', reducedMotion.matches ? text.reducedLabel : paused() ? text.resume : text.pause);
+    toggle.querySelector('span').textContent = reducedMotion.matches ? text.reduced : paused() ? text.resume : text.pause;
     toggle.querySelector('use').setAttribute('href', paused() ? '#play' : '#pause');
     toggle.disabled = reducedMotion.matches;
     if (paused() || document.hidden || dialog.open) {
@@ -95,7 +103,7 @@
   greeting.addEventListener('click', () => {
     clearTimeout(greetingTimer);
     friend.classList.add('is-greeting');
-    document.querySelector('.greeting-status').textContent = '포프도 반갑게 인사해요!';
+    document.querySelector('.greeting-status').textContent = text.greeting;
     animate(greeting, [{ transform: 'rotate(0)' }, { transform: 'rotate(-14deg) translateY(-8px)', offset: .2 }, { transform: 'rotate(12deg)', offset: .4 }, { transform: 'rotate(-10deg)', offset: .6 }, { transform: 'rotate(6deg)', offset: .8 }, { transform: 'rotate(0)' }], { duration: 850, easing: 'ease-in-out' });
     greetingTimer = setTimeout(() => {
       friend.classList.remove('is-greeting');

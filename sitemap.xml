@@ -29,4 +29,8 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://daypixel.kr/poff/en/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
 </urlset>

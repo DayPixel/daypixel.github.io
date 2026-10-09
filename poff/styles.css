@@ -34,6 +34,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, video:focus-visibl
 .brand img { display: block; border-radius: 10px; }
 .header nav { display: flex; align-items: center; gap: 28px; font-size: 14px; }
 .header nav>a:not(.nav-download) { color: var(--muted); }
+.language-link { min-height: 44px; display: inline-flex; align-items: center; padding-inline: 8px; }
 .nav-download { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 17px; border: 1px solid var(--line); border-radius: 7px; background: rgb(242 244 243 / 3%); }
 .nav-download span { margin-left: 14px; }
 .motion-toggle { background: transparent; border: 0; min-height: 44px; min-width: 44px; display: flex; align-items: center; gap: 5px; padding: 8px; color: var(--muted); font-size: 12px; }
@@ -173,7 +174,7 @@ html:has(.film-dialog[open]) { overflow: hidden; }
   .header { height: 76px; }
   .brand { font-size: 28px; }
   .header nav { gap: 10px; }
-  .header nav>a:not(.nav-download) { display: none; }
+  .header nav>a:not(.nav-download):not(.language-link) { display: none; }
   .motion-toggle span { display: none; }
   .motion-toggle { padding: 10px; }
   .nav-download { font-size: 12px; padding: 10px 13px; }
@@ -240,6 +241,9 @@ html:has(.film-dialog[open]) { overflow: hidden; }
   .film-toolbar h2 { font-size: 13px; }
   .film-toolbar h2 span { display: block; margin: 6px 0 0; font-size: 10px; }
   .film-dialog>p { font-size: 11px; }
+}
+@media (max-width: 380px) {
+  .header .brand span { display: none; }
 }
 @media (max-width: 360px) {
   .shell { padding-inline: 18px; }

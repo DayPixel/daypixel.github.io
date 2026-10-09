@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101217">
+  <title>Poff — A little company on your desktop | Mac & Windows</title>
+  <meta name="description" content="Poff is a tiny friend who lives on your desktop. Customize your character, join your friends in a room, wave hello and share a few words. Free for Mac and Windows.">
+  <link rel="canonical" href="https://daypixel.kr/poff/en/">
+  <link rel="alternate" hreflang="ko" href="https://daypixel.kr/poff/">
+  <link rel="alternate" hreflang="en" href="https://daypixel.kr/poff/en/">
+  <link rel="alternate" hreflang="x-default" href="https://daypixel.kr/poff/">
+  <link rel="icon" href="../assets/puff.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:title" content="Poff — A little company on your desktop | Mac & Windows">
+  <meta property="og:description" content="A little company on your desktop. Customize Poff and work alongside friends. Free for Mac and Windows.">
+  <meta property="og:url" content="https://daypixel.kr/poff/en/">
+  <meta property="og:image" content="https://daypixel.kr/poff/assets/app-icon.png">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://daypixel.kr/poff/en/#app",
+    "name": "Poff",
+    "alternateName": ["Poff"],
+    "url": "https://daypixel.kr/poff/en/",
+    "description": "A tiny friend who lives on your desktop. Customize your character, share a room with friends, wave hello and exchange short messages.",
+    "image": "https://daypixel.kr/poff/assets/app-icon.png",
+    "applicationCategory": "DesktopEnhancementApplication",
+    "operatingSystem": ["macOS 14 or later", "Windows 10 22H2 or later", "Windows 11"],
+    "publisher": {"@type": "Organization", "name": "DayPixel", "url": "https://daypixel.kr/"},
+    "softwareVersion": "0.2.3",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}
+  }
+  </script>
+  <link rel="preload" href="../assets/SUITE-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="../app.js?v=10" defer></script>
+  <link rel="stylesheet" href="../styles.css?v=12">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.8 12.5c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.2-2.7.9-3.4.9s-1.8-.9-3-.8C7.6 7.5 6.2 8.4 5.4 9.8c-1.6 2.8-.4 7 1.1 9.2.7 1 1.5 2.1 2.6 2 1.1 0 1.5-.7 2.9-.7s1.8.7 3 .7 1.9-1 2.6-2c.8-1.1 1.1-2.2 1.2-2.3-.1 0-2-1-2-3.2ZM14.6 6c.6-.8 1.1-1.9 1-3-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.7-1.3Z"/></symbol>
+    <symbol id="windows" viewBox="0 0 24 24"><path fill="currentColor" d="m2 4 9-1v8H2V4Zm11-1.3L23 1v10H13V2.7ZM2 13h9v8l-9-1v-7Zm11 0h10v10l-10-1.7V13Z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M12 4v13m-5-5 5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="puff-body" viewBox="0 0 40 44"><path d="M5 21C5 1 35 1 35 21v15q-3 5-6 0t-6 0t-6 0t-6 0q-3 5-6 0Z" fill="currentColor"/><g class="puff-eyes" fill="#233f34"><ellipse cx="15" cy="20" rx="2.1" ry="2.8"/><ellipse cx="25" cy="20" rx="2.1" ry="2.8"/></g><g fill="#ed93b1"><ellipse cx="10" cy="26" rx="2.4" ry="1.2"/><ellipse cx="30" cy="26" rx="2.4" ry="1.2"/></g></symbol>
+    <symbol id="pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor"/></symbol>
+  </svg>
+  <header class="header shell">
+    <a class="brand" href="./" aria-label="Poff home"><img src="../assets/app-icon.png" width="38" height="38" alt=""><span>Poff</span></a>
+    <nav aria-label="Main navigation"><button class="motion-toggle" type="button" aria-pressed="false" hidden><svg aria-hidden="true"><use href="#pause"/></svg><span>Pause motion</span></button><a href="#features">Meet Poff</a><a href="https://github.com/DayPixel/puff/releases/tag/v0.2.3">Updates</a><a class="language-link" href="../" lang="ko" hreflang="ko" aria-label="한국어 페이지">한국어</a><a class="nav-download" href="#download">Get Poff <span aria-hidden="true">↓</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title" data-motion-zone>
+      <a class="release-link" href="https://github.com/DayPixel/puff/releases/tag/v0.2.3"><span class="release-dot" aria-hidden="true"></span> v0.2.3 · Free public beta <span aria-hidden="true">↗</span></a>
+      <div class="hero-copy">
+        <h1 id="hero-title">A little company.<br><span>On your desktop.</span></h1>
+        <p class="hero-description">A tiny friend who perches on windows and floats around.<br>Open Poff and get on with your day.</p>
+      </div>
+      <div class="hero-downloads">
+        <div class="hero-actions">
+          <div><a class="button button-primary" href="https://github.com/DayPixel/puff/releases/download/v0.2.3/Poff-0.2.3.dmg" data-download="mac"><svg aria-hidden="true"><use href="#apple"/></svg>Download for Mac<svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a><span class="requirement">macOS 14+ · Apple Silicon</span></div>
+          <div><a class="button button-secondary" href="https://github.com/DayPixel/puff/releases/download/v0.2.3/Poff-0.2.3-Setup.exe" data-download="windows"><svg aria-hidden="true"><use href="#windows"/></svg>Download for Windows<svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a><span class="requirement">Windows 10 / 11 · x64</span></div>
+        </div>
+        <p class="hero-note">English and Korean · Follows your system language.<br><a href="#download">Installation guide ↗</a></p>
+      </div>
+      <div class="hero-friend friend-peach" aria-hidden="true"><div class="float"><svg viewBox="0 0 40 44"><use href="#puff-body"/></svg></div><span class="friend-shadow"></span></div>
+      <div class="hero-friend friend-mint"><div class="float"><button class="puff-greeting" type="button" aria-label="Say hello to Poff" disabled><svg viewBox="0 0 40 44" aria-hidden="true"><use href="#puff-body"/></svg></button><span class="greeting-bubble" aria-hidden="true">Hi there!</span></div><span class="friend-shadow" aria-hidden="true"></span><span class="friend-hint" aria-hidden="true" hidden>Click to say hello</span></div>
+      <p class="sr-only greeting-status" role="status"></p>
+      <a class="scroll-cue" href="#puff-preview">Meet your desk buddy <span aria-hidden="true">↓</span></a>
+    </section>
+    <figure class="puff-preview shell" id="puff-preview" data-reveal>
+      <div class="preview-heading"><p>Together, on your own screens.</p><a class="film-link" href="../assets/poff-intro-en-v1.mp4"><svg aria-hidden="true"><use href="#play"/></svg>Watch with sound <span>39 sec</span></a></div>
+      <div class="video-frame">
+        <div class="window-bar" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>Poff, on your desktop.</span><span>39s</span></div>
+        <a class="film-stage" href="../assets/poff-intro-en-v1.mp4" aria-label="Open the intro video with sound"><video class="night-preview" muted loop playsinline preload="metadata" poster="../assets/poff-poster-en-v1.jpg" width="1280" height="720" aria-label="Poff intro video, muted autoplay" aria-describedby="video-description"><source src="../assets/poff-preview-en-v1.mp4" type="video/mp4"></video></a>
+      </div>
+      <figcaption><span>A little company, even when nobody is talking.</span><span>Staged Mac demo · Illustrative names and room size</span></figcaption>
+      <details class="video-description" id="video-description"><summary>Read the video description</summary><p>Friends’ Poffs arrive on a desktop. They perch on windows while typing and float while thinking or taking a break. Shaking a window makes them tumble, and they react to the cursor. You can click a Poff to wave or send a short message in a private room. The video also shows choosing a color, eyes and a hat. This English demo uses the Mac app’s characters and movement; names and room size are illustrative.</p></details>
+    </figure>
+    <section class="features shell" id="features" aria-labelledby="features-title">
+      <div class="features-heading" data-reveal><p class="eyebrow">A little presence</p><h2 id="features-title">Your own work.<br>A shared little world.</h2><p>You don’t have to keep a conversation going.<br>Sometimes it’s enough to have someone there.</p></div>
+      <div class="feature-list">
+        <article data-reveal><svg class="feature-icon" aria-hidden="true" viewBox="0 0 40 44"><use href="#puff-body"/></svg><div><h3>Share a room</h3><p>Create a room and send your friends an invite code. Their Poffs appear on your desktop when they join. You can also meet others in the public plaza.</p></div></article>
+        <article data-reveal><svg class="feature-icon" aria-hidden="true" viewBox="0 0 40 44"><use href="#puff-body"/></svg><div><h3>Keep it light</h3><p>Click a friend’s Poff to wave hello. Short messages in a private room appear in speech bubbles and disappear after eight seconds.</p></div></article>
+        <article data-reveal><svg class="feature-icon" aria-hidden="true" viewBox="0 0 40 44"><use href="#puff-body"/></svg><div><h3>Make Poff yours</h3><p>Pick a color, eyes, a hat and a little accessory. You can also add what you’re working on beside your name.</p></div></article>
+      </div>
+    </section>
+    <section class="download-section" id="download" aria-labelledby="download-title">
+      <div class="shell"><div class="download-heading"><h2 id="download-title">Make room<br>for Poff.</h2><span class="version-label">v0.2.3 · Free public beta</span></div>
+      <p class="download-intro">Choose the download for your computer. Poff uses Korean when your system language is Korean, and English otherwise. You can choose either language in the app menu.</p>
+      <div class="download-options">
+        <article class="download-option"><div class="os-title"><svg aria-hidden="true"><use href="#apple"/></svg><h3>macOS</h3></div><p class="os-spec">Apple Silicon (M1 or later)<br>macOS 14 or later</p><a class="button button-primary" href="https://github.com/DayPixel/puff/releases/download/v0.2.3/Poff-0.2.3.dmg" data-download="mac">Download for Mac <span>DMG · 3.6 MB</span><svg aria-hidden="true"><use href="#arrow"/></svg></a><details><summary>Install on Mac</summary><div class="detail-content"><ol><li>If you have an older version, quit it and move the old app to the Trash. Your profile and saved rooms stay on your computer.</li><li>Open the DMG and drag Poff into your Applications folder.</li><li>Launch Poff from Applications. If macOS asks you to confirm on first launch, choose Open.</li></ol><p>An Intel Mac build is not available yet.</p></div></details></article>
+        <article class="download-option"><div class="os-title"><svg aria-hidden="true"><use href="#windows"/></svg><h3>Windows</h3></div><p class="os-spec">Windows 10 22H2 / Windows 11<br>64-bit (x64)</p><a class="button button-primary" href="https://github.com/DayPixel/puff/releases/download/v0.2.3/Poff-0.2.3-Setup.exe" data-download="windows">Download for Windows <span>EXE · 82.2 MB</span><svg aria-hidden="true"><use href="#arrow"/></svg></a><details><summary>Install on Windows</summary><div class="detail-content"><ol><li>Run the downloaded Setup.exe to install Poff.</li><li>After installation, open Poff from the Start menu.</li><li>Find the Poff menu in the taskbar’s hidden icons (∧).</li></ol><p>No extra software is required. The Windows installer is not yet code-signed, and testing on a real Windows device is still pending.</p></div></details></article>
+      </div>
+      <div class="release-links"><a href="https://github.com/DayPixel/puff/releases/tag/v0.2.3">Release notes <span aria-hidden="true">↗</span></a><a href="https://github.com/DayPixel/puff/releases/download/v0.2.3/SHA256SUMS.txt">Verify file integrity <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+
+
+    <section class="faq shell" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">Questions?</h2><div class="faq-list">
+      <details><summary>Can Mac and Windows users share a room?</summary><p>Mac and Windows can join the same room, wave and exchange short messages. Features and movement differ by platform. Windows does not yet include automatic work detection, work statistics or stretch reminders, and some movement effects are Mac-only. Testing between real Mac and Windows devices is still pending.</p></details>
+      <details><summary>Can others see my screen or what I type?</summary><p>Poff does not send screen content, window titles or what you type. It shares your name, task, appearance, activity status and the waves and messages you choose to send. Private room details are not announced in the plaza, and messages are shown only in your current private room.</p><p>Rooms and membership lists are stored on the server. The app does not store presence, waves or messages as chat history. Your profile and sign-in information are kept on your device.</p></details>
+      <details><summary>How do I switch languages?</summary><p>Poff follows your system language by default. To choose English or Korean, open Settings → Language on Mac, or Language in the Windows tray menu. You can switch back to the system setting from the same menu.</p></details>
+      <details><summary>How do updates work?</summary><p>Poff can notify you when an update is available. Choose Install in the notification, or use Check for Updates in the app menu.</p><p>Version 0.2.0 users and Windows portable ZIP users should install the DMG or EXE above. Later updates are available in the installed app; the Windows portable ZIP does not include installer updates.</p></details>
+      <details><summary>Will Poff get in the way?</summary><p>Clicks outside Poff go through to the app underneath. Use the tray or menu bar to enable Do Not Disturb, hide Poff temporarily or adjust opacity. Poff is hidden in full-screen apps by default.</p></details>
+    </div></section>
+
+    <dialog class="film-dialog" aria-labelledby="film-title">
+      <div class="film-toolbar"><h2 id="film-title">Meet Poff <span>Mac demo · 39 sec</span></h2><button class="film-close" type="button" aria-label="Close intro video">Close <span aria-hidden="true">×</span></button></div>
+      <video class="full-film" controls playsinline preload="none" poster="../assets/poff-poster-en-v1.jpg" width="1920" height="1080" aria-label="Poff intro video, Mac demo" aria-describedby="film-description"><source src="../assets/poff-intro-en-v1.mp4" type="video/mp4"></video>
+      <p id="film-description">Poffs perch on windows, float around and respond to the cursor and greetings. Names and room size are illustrative. This demo shows the English interface.</p>
+    </dialog>
+  </main>
+  <footer class="footer shell"><a class="brand" href="./"><img src="../assets/app-icon.png" width="32" height="32" alt=""><span>Poff</span></a><p>Made by <a href="https://daypixel.kr/">DayPixel</a>.</p><div><a href="mailto:eunhafactory@daypixel.kr?subject=Poff%20enquiry">Contact</a><a href="https://github.com/DayPixel/puff">GitHub</a></div></footer>
+</body>
+</html>
