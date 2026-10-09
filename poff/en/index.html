@@ -38,8 +38,8 @@
   }
   </script>
   <link rel="preload" href="../assets/SUITE-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="../app.js?v=10" defer></script>
-  <link rel="stylesheet" href="../styles.css?v=12">
+  <script src="../app.js?v=11" type="module"></script>
+  <link rel="stylesheet" href="../styles.css?v=13">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -72,7 +72,7 @@
       <div class="hero-friend friend-peach" aria-hidden="true"><div class="float"><svg viewBox="0 0 40 44"><use href="#puff-body"/></svg></div><span class="friend-shadow"></span></div>
       <div class="hero-friend friend-mint"><div class="float"><button class="puff-greeting" type="button" aria-label="Say hello to Poff" disabled><svg viewBox="0 0 40 44" aria-hidden="true"><use href="#puff-body"/></svg></button><span class="greeting-bubble" aria-hidden="true">Hi there!</span></div><span class="friend-shadow" aria-hidden="true"></span><span class="friend-hint" aria-hidden="true" hidden>Click to say hello</span></div>
       <p class="sr-only greeting-status" role="status"></p>
-      <a class="scroll-cue" href="#puff-preview">Meet your desk buddy <span aria-hidden="true">↓</span></a>
+      <a class="scroll-cue" href="#poff-demo">Play with Poff <span aria-hidden="true">↓</span></a>
     </section>
     <figure class="puff-preview shell" id="puff-preview" data-reveal>
       <div class="preview-heading"><p>Together, on your own screens.</p><a class="film-link" href="../assets/poff-intro-en-v1.mp4"><svg aria-hidden="true"><use href="#play"/></svg>Watch with sound <span>39 sec</span></a></div>
@@ -83,6 +83,20 @@
       <figcaption><span>A little company, even when nobody is talking.</span><span>Staged Mac demo · Illustrative names and room size</span></figcaption>
       <details class="video-description" id="video-description"><summary>Read the video description</summary><p>Friends’ Poffs arrive on a desktop. They perch on windows while typing and float while thinking or taking a break. Shaking a window makes them tumble, and they react to the cursor. You can click a Poff to wave or send a short message in a private room. The video also shows choosing a color, eyes and a hat. This English demo uses the Mac app’s characters and movement; names and room size are illustrative.</p></details>
     </figure>
+    <section class="poff-demo shell" id="poff-demo" aria-labelledby="demo-title" hidden>
+      <div class="demo-heading"><div><h2 id="demo-title">A little hello before you install.</h2><p>Poff perches, wanders, and finds its way back.</p></div><button class="demo-shake" type="button">Shake the window <span aria-hidden="true">↔</span></button></div>
+      <p class="demo-instructions" id="demo-instructions">Drag the top of the window, or shake it. Tap a Poff to say hello.</p>
+      <div class="demo-stage" role="group" aria-label="A little hello before you install.">
+        <div class="demo-window">
+          <button class="demo-window-handle" type="button" aria-label="Move the demo window · Arrow keys also work" aria-describedby="demo-instructions"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Move this little window</span><span aria-hidden="true">↔</span></button>
+          <p class="demo-window-copy">Your day, as usual.<br><span>A little company.</span></p>
+        </div>
+        <button class="demo-poff demo-poff-0" type="button" aria-label="Say hello to mint Poff"><svg viewBox="0 0 32 34" aria-hidden="true"><path class="demo-body" fill="currentColor"/><g class="demo-eyes" fill="#233f34"><circle cx="12" cy="15" r="2.2"/><circle cx="20" cy="15" r="2.2"/></g><path class="demo-happy" d="M9.6 16 Q12 12.2 14.4 16 M17.6 16 Q20 12.2 22.4 16" fill="none" stroke="#233f34" stroke-width="1.1" stroke-linecap="round"/><g fill="#ed93b1"><ellipse cx="9" cy="19.5" rx="2" ry="1.2"/><ellipse cx="23" cy="19.5" rx="2" ry="1.2"/></g></svg><span class="demo-bubble" aria-hidden="true" hidden></span></button>
+        <button class="demo-poff demo-poff-1" type="button" aria-label="Say hello to peach Poff"><svg viewBox="0 0 32 34" aria-hidden="true"><path class="demo-body" fill="currentColor"/><g class="demo-eyes" fill="#233f34"><circle cx="12" cy="15" r="2.2"/><circle cx="20" cy="15" r="2.2"/></g><path class="demo-happy" d="M9.6 16 Q12 12.2 14.4 16 M17.6 16 Q20 12.2 22.4 16" fill="none" stroke="#233f34" stroke-width="1.1" stroke-linecap="round"/><g fill="#ed93b1"><ellipse cx="9" cy="19.5" rx="2" ry="1.2"/><ellipse cx="23" cy="19.5" rx="2" ry="1.2"/></g></svg><span class="demo-bubble" aria-hidden="true" hidden></span></button>
+      </div>
+      <p class="demo-note">A little Poff playground, right here on the page.</p>
+      <p class="sr-only demo-status" role="status" aria-live="polite"></p>
+    </section>
     <section class="features shell" id="features" aria-labelledby="features-title">
       <div class="features-heading" data-reveal><p class="eyebrow">A little presence</p><h2 id="features-title">Your own work.<br>A shared little world.</h2><p>You don’t have to keep a conversation going.<br>Sometimes it’s enough to have someone there.</p></div>
       <div class="feature-list">

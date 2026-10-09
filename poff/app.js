@@ -1,3 +1,5 @@
+import { PoffWorld, bodyPath } from './poff-motion.mjs?v=1';
+
 (() => {
   const root = document.documentElement;
   const english = root.lang === 'en';
@@ -24,6 +26,7 @@
   let greetingTimer;
   let pointerFrame;
   const paused = () => userPaused || reducedMotion.matches;
+  const playground = createPlayground();
 
   function syncMotion() {
     root.classList.toggle('motion-paused', paused() || document.hidden || dialog.open);
@@ -43,6 +46,138 @@
     } else {
       preview.pause();
     }
+    playground.sync(paused() || document.hidden || dialog.open);
+  }
+
+  function createPlayground() {
+    const demo = document.querySelector('.poff-demo');
+    const stage = demo.querySelector('.demo-stage');
+    const windowElement = demo.querySelector('.demo-window');
+    const handle = demo.querySelector('.demo-window-handle');
+    const shake = demo.querySelector('.demo-shake');
+    const status = demo.querySelector('.demo-status');
+    const poffs = [...demo.querySelectorAll('.demo-poff')];
+    const bubbles = english ? { hello: 'Hello!', oops: 'Whoa!' } : { hello: '반가워요!', oops: '으악!' };
+    const shookText = english ? 'Poff tumbles down, then finds its way back to the window.' : '포프가 떨어졌다가 다시 창 위로 돌아와요.';
+    let scale, world, visible = false, stopped = true, frame, previousTime, drag, mouse, feedbackTimer;
+    demo.hidden = false;
+
+    function render() {
+      windowElement.style.transform = `translate(${world.window.x * scale}px, ${world.window.y * scale}px)`;
+      windowElement.style.width = `${world.window.width * scale}px`;
+      windowElement.style.height = `${world.window.height * scale}px`;
+      world.agents.forEach((agent, index) => {
+        const element = poffs[index], pose = world.pose(agent);
+        element.style.width = `${40 * scale}px`;
+        element.style.height = `${42.5 * scale}px`;
+        element.style.transform = `translate(${pose.x * scale}px, ${pose.y * scale}px)`;
+        element.querySelector('svg').style.transform = `rotate(${pose.rotation}rad) scale(${pose.scaleX}, ${pose.scaleY})`;
+        element.querySelector('.demo-body').setAttribute('d', bodyPath(agent.hem));
+        element.querySelector('.demo-eyes').setAttribute('transform', `translate(${agent.eyeX / 1.25}, ${agent.eyeY / 1.25}) translate(16 15) scale(1 ${pose.blink ? .15 : 1}) translate(-16 -15)`);
+        element.classList.toggle('is-happy', pose.happy);
+        const bubble = element.querySelector('.demo-bubble');
+        bubble.hidden = !agent.bubble;
+        bubble.textContent = bubbles[agent.bubble] || '';
+      });
+      shake.disabled = stopped || !world.agents.some(agent => agent.seated);
+    }
+
+    function resize() {
+      scale = stage.clientWidth < 600 ? 1.4 : 1.65;
+      const width = stage.clientWidth / scale, height = stage.clientHeight / scale;
+      if (world) world.resize(width, height);
+      else world = new PoffWorld(width, height);
+      endDrag();
+      mouse = null;
+      render();
+    }
+
+    function tick(at) {
+      frame = null;
+      if (stopped || !visible) return;
+      if (previousTime !== undefined) world.update((at - previousTime) / 1000, mouse);
+      previousTime = at;
+      render();
+      frame = requestAnimationFrame(tick);
+    }
+
+    function sync(pause = stopped) {
+      stopped = pause;
+      handle.disabled = stopped;
+      if (stopped || !visible) {
+        cancelAnimationFrame(frame);
+        frame = null;
+        previousTime = undefined;
+        endDrag();
+        windowElement.classList.remove('is-shaking');
+      } else if (!frame) frame = requestAnimationFrame(tick);
+      render();
+    }
+
+    function feedback(message) {
+      clearTimeout(feedbackTimer);
+      status.textContent = message;
+      feedbackTimer = setTimeout(() => {
+        status.textContent = '';
+        world.agents.forEach(agent => { agent.bubble = ''; agent.waveUntil = 0; });
+        render();
+      }, 2300);
+    }
+
+    function endDrag() {
+      if (drag && handle.hasPointerCapture(drag.id)) handle.releasePointerCapture(drag.id);
+      drag = null;
+      if (world) world.lastDrag = null;
+    }
+
+    resize();
+    new ResizeObserver(resize).observe(stage);
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(stage);
+    stage.addEventListener('pointermove', event => {
+      if (stopped) return;
+      const rect = stage.getBoundingClientRect();
+      const point = { x: (event.clientX - rect.left) / scale, y: (event.clientY - rect.top) / scale };
+      if (drag && event.pointerId === drag.id) {
+        if (world.moveWindow(point.x - drag.x, point.y - drag.y, event.timeStamp / 1000)) feedback(shookText);
+        render();
+      } else if (event.pointerType === 'mouse') mouse = point;
+    });
+    stage.addEventListener('pointerleave', () => { mouse = null; });
+    handle.addEventListener('pointerdown', event => {
+      if (stopped || event.button !== 0) return;
+      const rect = stage.getBoundingClientRect();
+      drag = { id: event.pointerId, x: (event.clientX - rect.left) / scale - world.window.x, y: (event.clientY - rect.top) / scale - world.window.y };
+      world.lastDrag = { ...world.window, at: event.timeStamp / 1000 };
+      world.direction = { x: 0, y: 0 }; world.reversals = [];
+      handle.setPointerCapture(event.pointerId);
+    });
+    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(event => handle.addEventListener(event, endDrag));
+    handle.addEventListener('keydown', event => {
+      const directions = { ArrowLeft: [-18, 0], ArrowRight: [18, 0], ArrowUp: [0, -18], ArrowDown: [0, 18] };
+      const direction = directions[event.key];
+      if (!direction || stopped) return;
+      event.preventDefault();
+      if (world.moveWindow(world.window.x + direction[0], world.window.y + direction[1], event.timeStamp / 1000)) feedback(shookText);
+      render();
+    });
+    poffs.forEach((element, index) => {
+      element.addEventListener('click', () => { world.greet(index); feedback(text.greeting); render(); });
+      ['pointerenter', 'focusin'].forEach(event => element.addEventListener(event, () => { world.pausedIndex = index; }));
+      ['pointerleave', 'focusout'].forEach(event => element.addEventListener(event, () => {
+        if (world.pausedIndex === index && document.activeElement !== element && !element.matches(':hover')) world.pausedIndex = undefined;
+      }));
+    });
+    shake.addEventListener('click', () => {
+      if (stopped || !world.shake()) return;
+      windowElement.classList.remove('is-shaking');
+      // Restart the short window shake when the previous one has already finished.
+      void windowElement.offsetWidth;
+      windowElement.classList.add('is-shaking');
+      feedback(shookText);
+      render();
+    });
+    windowElement.addEventListener('animationend', () => windowElement.classList.remove('is-shaking'));
+    return { sync };
   }
 
   function animate(element, frames, options) {
