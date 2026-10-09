@@ -1,0 +1,25 @@
+.privacy-main { max-width: 960px; padding-block: 56px 72px; }
+.privacy-main h1 { font-size: clamp(30px, 5vw, 46px); }
+.privacy-main h2 { font-size: 22px; margin: 0 0 16px; scroll-margin-top: 100px; }
+.privacy-main p, .privacy-main li { font-size: 15px; line-height: 1.85; }
+.privacy-main p { margin: 12px 0; }
+.privacy-main a { color: var(--mint); text-decoration: underline; text-underline-offset: 3px; }
+.privacy-meta { color: var(--muted); }
+.privacy-callout { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--mint); border-radius: 8px; padding: 16px 22px; margin: 28px 0; }
+.privacy-toc { display: flex; flex-wrap: wrap; gap: 8px 22px; padding-block: 12px 28px; font-size: 14px; }
+.privacy-main section { border-top: 1px solid var(--line); padding-top: 28px; margin-top: 28px; }
+.privacy-table { overflow-x: auto; margin-block: 18px; }
+.privacy-table:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; }
+.privacy-table table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px; line-height: 1.75; }
+.privacy-table th, .privacy-table td { padding: 14px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.privacy-table th { background: var(--surface); font-weight: 650; }
+.privacy-table td:first-child { width: 25%; }
+.privacy-main code { font-size: 12px; overflow-wrap: anywhere; }
+.privacy-main ol, .privacy-main ul { padding-left: 24px; }
+.privacy-main li + li { margin-top: 8px; }
+.privacy-page .footer>div { flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .privacy-main { padding-top: 32px; }
+  .privacy-page .header nav { gap: 8px; }
+  .privacy-callout { padding: 14px 16px; }
+}

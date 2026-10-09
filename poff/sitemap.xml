@@ -2,16 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://daypixel.kr/poff/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://daypixel.kr/poff/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://daypixel.kr/poff/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daypixel.kr/poff/" />
   </url>
   <url>
     <loc>https://daypixel.kr/poff/en/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://daypixel.kr/poff/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://daypixel.kr/poff/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daypixel.kr/poff/" />
   </url>
+<url><loc>https://daypixel.kr/poff/privacy.html</loc><lastmod>2026-10-10</lastmod></url>
+<url><loc>https://daypixel.kr/poff/en/privacy.html</loc><lastmod>2026-10-10</lastmod></url>
 </urlset>
