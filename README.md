@@ -5,6 +5,7 @@ DayPixel의 공식 회사 소개와 주섬주섬·하나둘 서비스 지원을 
 ## 포함 파일
 
 - `index.html`: DayPixel 회사 및 서비스 소개
+- `poff/`: 포프(Poff) 공식 다운로드 홈페이지. 앱 배포 파일과 기존 업데이트 피드는 DayPixel/puff 저장소에서 유지합니다.
 - `support.html`: 주섬주섬·하나둘 고객지원
 - `privacy.html`: 주섬주섬·하나둘 개인정보 처리방침
 - `terms.html`: 하나둘 이용약관
