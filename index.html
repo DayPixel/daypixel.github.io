@@ -1,25 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="naver-site-verification" content="0819e4cbc8bf29d06053c0c24b4d48a7c4e4794a">
     <title>DayPixel — 일상을 만듭니다</title>
-    <meta
-      name="description"
-      content="데이픽셀은 일상의 작은 불편을 발견하고, 오래 쓰고 싶은 앱과 웹 서비스를 만드는 독립 제품 스튜디오입니다."
-    >
-    <meta name="theme-color" content="#f4f3ef">
+    <meta name="description" content="데이픽셀은 좋아하는 것과 함께하는 순간을 통해 일상에 더 가까워지는 앱과 웹 서비스를 만드는 독립 제품 스튜디오입니다.">
+    <meta name="theme-color" content="#f1f5f7">
     <link rel="canonical" href="https://daypixel.kr/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="poff/assets/SUITE-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css?v=2">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:title" content="DayPixel — 일상을 만듭니다">
-    <meta
-      property="og:description"
-      content="일상의 작은 불편을 더 단순하고 좋은 경험으로 바꾸는 독립 제품 스튜디오."
-    >
+    <meta property="og:description" content="좋아하는 것, 가보고 싶은 곳, 함께하는 시간. 일상에 조금 더 가까워지는 제품을 만듭니다.">
     <meta property="og:url" content="https://daypixel.kr/">
     <script type="application/ld+json">
       {
@@ -40,6 +35,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="/" aria-label="DayPixel 홈">
@@ -47,124 +43,136 @@
           <span class="brand-name">DayPixel</span>
         </a>
         <nav class="site-nav" aria-label="주요 메뉴">
-          <a href="#about">About</a>
-          <a href="support.html">Support</a>
-          <a class="nav-pill" href="mailto:eunhafactory@daypixel.kr">Contact</a>
+          <a href="#about">소개</a>
+          <a href="#product">제품</a>
+          <a href="support.html">고객지원</a>
+          <a class="nav-pill" href="#contact">문의하기 <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero shell" aria-labelledby="hero-title">
-        <div class="hero-meta">
-          <span>Independent product studio</span>
-          <span>Seoul · Korea</span>
-        </div>
-        <h1 id="hero-title">
-          <span>일상을</span>
-          <span>만듭니다<i class="title-pixel" aria-hidden="true"></i></span>
-        </h1>
-        <div class="hero-footer">
-          <p>
-            데이픽셀은 매일의 작은 불편을 발견하고,<br>
-            누구나 자연스럽게 쓸 수 있는 디지털 제품으로 바꿉니다.
-          </p>
-          <a class="text-link" href="#about">데이픽셀 알아보기 <span>↘</span></a>
-        </div>
-      </section>
-
-      <section class="capability-strip" aria-label="DayPixel이 하는 일">
-        <div class="shell capability-grid">
-          <p><span>01</span> Product strategy</p>
-          <p><span>02</span> Interface design</p>
-          <p><span>03</span> Mobile &amp; web</p>
-        </div>
-      </section>
-
-      <section class="principles-section" aria-labelledby="principles-title">
-        <div class="shell">
-          <div class="section-heading">
-            <div class="section-kicker section-kicker-dark">
-              <span>01</span>
-              <span>How we work</span>
-            </div>
-            <h2 id="principles-title">쓰는 사람에게는<br>단순해야 합니다.</h2>
+    <main id="main" tabindex="-1">
+      <section class="home-hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">데이픽셀 · 독립 제품 스튜디오</p>
+          <h1 id="hero-title">일상을<br>만듭니다<span class="title-pixel" aria-hidden="true"></span></h1>
+          <p class="hero-description">좋아하는 것, 가보고 싶은 곳, 함께하는 시간.<br> 일상에 조금 더 가까워지는 제품을 만듭니다.</p>
+          <div class="hero-actions">
+            <a class="button" href="#about">데이픽셀 알아보기 <span aria-hidden="true">↓</span></a>
+            <a class="quiet-link" href="#product">제품 보기 <span aria-hidden="true">↗</span></a>
           </div>
-          <ol class="principle-list">
-            <li>
-              <span class="principle-index">01</span>
-              <h3>작은 불편에서 시작합니다.</h3>
-              <p>매일 반복되지만 익숙해서 지나쳤던 문제를 먼저 찾습니다.</p>
-            </li>
-            <li>
-              <span class="principle-index">02</span>
-              <h3>설명 없이도 이해되게 만듭니다.</h3>
-              <p>기능을 더하기보다 흐름을 정리하고 불필요한 선택을 덜어냅니다.</p>
-            </li>
-            <li>
-              <span class="principle-index">03</span>
-              <h3>출시한 뒤에도 계속 다듬습니다.</h3>
-              <p>실제 사용 경험을 살피고 필요한 변화는 빠르게 반영합니다.</p>
-            </li>
-          </ol>
+        </div>
+        <div class="day-scene" aria-hidden="true">
+          <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <defs>
+              <pattern id="pixel-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                <path d="M32 0H0V32" class="scene-grid" fill="none"/>
+              </pattern>
+            </defs>
+            <rect width="480" height="480" class="scene-paper"/>
+            <rect width="480" height="480" fill="url(#pixel-grid)"/>
+            <path d="M48 64h352v256H48z" class="scene-frame"/>
+            <path d="M64 80h320v224H64z" class="scene-sky"/>
+            <path d="M296 104h48v16h16v16h16v64h-16v16h-16v16h-48v-16h-16v-16h-16v-64h16v-16h16z" class="scene-sun"/>
+            <path d="M96 128h32v-16h48v16h32v32H96zM224 272h32v-16h48v16h32v32H224z" class="scene-cloud"/>
+            <path d="M64 272h32v-32h32v-32h32v32h32v32h32v32H64z" class="scene-hill"/>
+            <path d="M48 320h352v16H48zM208 80h16v224h-16z" class="scene-frame"/>
+            <path d="M32 400h416v16H32zM64 416h16v64H64zM400 416h16v64h-16z" class="scene-frame"/>
+            <path d="M112 352h64v16h16v16h-16v16h-64z" class="scene-cup"/>
+            <path d="M176 368h8v8h-8z" class="scene-paper"/>
+            <path d="M112 336h8v-16h8v-16" class="scene-steam" fill="none"/>
+            <path d="M248 384h96v16h-96z" class="scene-book"/>
+            <path d="M256 368h80v16h-80z" class="scene-cloud"/>
+            <path d="M248 352h96v16h-96z" class="scene-frame"/>
+            <path d="M376 368h40v32h-40z" class="scene-sun"/>
+            <path d="M392 320h8v48h-8zM368 328h24v16h-24zM400 312h24v16h-24z" class="scene-leaf"/>
+            <path d="M32 32h16v16H32zM416 64h16v16h-16zM432 288h16v16h-16z" class="scene-sun"/>
+            <path d="M16 16h16v16H16zM400 48h16v16h-16zM416 272h16v16h-16z" class="scene-frame"/>
+          </svg>
         </div>
       </section>
 
       <section class="about-section" id="about" aria-labelledby="about-title">
         <div class="shell about-grid">
-          <div class="section-kicker">
-            <span>02</span>
-            <span>About DayPixel</span>
+          <div>
+            <p class="eyebrow">데이픽셀 소개</p>
+            <h2 id="about-title">우리가 좋아하는 일상에<br>조금 더 가까이.</h2>
           </div>
           <div class="about-copy">
-            <h2 id="about-title">
-              하루를 바꾸는 건<br>
-              대단한 기술보다<br>
-              잘 만든 작은 도구라고 믿습니다.
-            </h2>
-            <p>
-              데이픽셀은 서울에서 시작한 독립 제품 스튜디오입니다. 모바일 앱과 웹
-              서비스를 직접 기획하고 디자인하며 개발합니다.
-            </p>
+            <p>데이픽셀은 앱과 웹 서비스를 만드는 독립 제품 스튜디오입니다.</p>
+            <p>취향을 모으고, 순간을 남기고, 함께 시간을 보내는 일. 일상을 채우는 작은 경험들을 제품으로 만듭니다.</p>
           </div>
-          <dl class="company-facts">
-            <div>
-              <dt>상호</dt>
-              <dd>데이픽셀 (DayPixel)</dd>
-            </div>
-            <div>
-              <dt>대표</dt>
-              <dd>이하은</dd>
-            </div>
-            <div>
-              <dt>소재지</dt>
-              <dd>서울특별시 성북구</dd>
-            </div>
-            <div>
-              <dt>분야</dt>
-              <dd>모바일 앱 · 웹 서비스</dd>
-            </div>
-            <div>
-              <dt>문의</dt>
-              <dd>
-                <a href="mailto:eunhafactory@daypixel.kr">
-                  eunhafactory@daypixel.kr
-                </a>
-              </dd>
-            </div>
-          </dl>
         </div>
       </section>
 
-      <section class="contact-section" aria-labelledby="contact-title">
+      <section class="approach-section shell" aria-labelledby="approach-title">
+        <div class="section-heading">
+          <p class="eyebrow">만드는 방식</p>
+          <h2 id="approach-title">자연스럽게 쓰이고,<br>오래 함께하도록.</h2>
+        </div>
+        <ol class="approach-list">
+          <li>
+            <span class="step-index" aria-hidden="true">01</span>
+            <h3>작은 순간을 살핍니다.</h3>
+            <p>무엇을 좋아하고, 어디에 가고, 누구와 시간을 보내는지. 가까운 일상에서 제품의 시작을 찾습니다.</p>
+          </li>
+          <li>
+            <span class="step-index" aria-hidden="true">02</span>
+            <h3>자연스러운 경험을 만듭니다.</h3>
+            <p>일상 속 행동에 자연스럽게 이어지도록, 흐름과 느낌을 세심하게 다듬습니다.</p>
+          </li>
+          <li>
+            <span class="step-index" aria-hidden="true">03</span>
+            <h3>오래 함께하도록 가꿉니다.</h3>
+            <p>쓰는 사람들의 경험을 듣고, 다시 찾고 싶은 제품이 되도록 계속 다듬습니다.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="work-section shell" id="product" aria-labelledby="work-title">
+        <div class="work-heading">
+          <h2 id="work-title">우리가 만든 것</h2>
+          <p>모으고, 찾아가고, 함께하고.</p>
+        </div>
+        <a class="product-entry" href="https://apps.apple.com/kr/app/id6764675472">
+          <img src="assets/juseomjuseom-mark.png" width="76" height="76" alt="" loading="lazy">
+          <div class="product-copy">
+            <h3>주섬주섬</h3>
+            <p>마음에 든 물건, 영상, 장소를 주섬주섬. 좋아하는 것들을 한곳에 모아두세요.</p>
+            <span class="product-platforms">iOS</span>
+          </div>
+          <span class="product-link">App Store에서 보기 <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="product-entry" href="https://apps.apple.com/kr/app/id6812646676">
+          <img src="assets/hanadul-app-icon.png" width="76" height="76" alt="" loading="lazy">
+          <div class="product-copy">
+            <h3>하나둘</h3>
+            <p>가보고 싶은 곳을 하나둘 모아. 흩어진 장소를 내 지도에 담고 다시 찾아보세요.</p>
+            <span class="product-platforms">iOS</span>
+          </div>
+          <span class="product-link">App Store에서 보기 <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="product-entry" href="/poff/">
+          <img src="poff/assets/app-icon.png" width="76" height="76" alt="" loading="lazy">
+          <div class="product-copy">
+            <h3>포프 <span lang="en">Poff</span></h3>
+            <p>화면 위에 사는 작은 친구. 각자의 화면에서 함께 있는 기분을 전합니다.</p>
+            <span class="product-platforms">Mac · Windows</span>
+          </div>
+          <span class="product-link">포프 알아보기 <span aria-hidden="true">↗</span></span>
+        </a>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="shell contact-grid">
-          <p>Have something useful in mind?</p>
-          <h2 id="contact-title">다음에 필요한 것을<br>함께 이야기해요.</h2>
-          <div class="contact-meta">
-            <span>New products · Partnerships · Questions</span>
-            <a href="mailto:eunhafactory@daypixel.kr">
-              eunhafactory@daypixel.kr <span>↗</span>
-            </a>
+          <div>
+            <p class="eyebrow">이야기 나누기</p>
+            <h2 id="contact-title">좋은 이야기를<br>기다립니다.</h2>
+          </div>
+          <div class="contact-copy">
+            <p>제품에 대한 이야기, 협업 제안,<br>궁금한 점이 있다면 편하게 보내주세요.</p>
+            <a class="button contact-button" href="mailto:eunhafactory@daypixel.kr">이메일로 문의하기 <span aria-hidden="true">↗</span></a>
+            <a class="quiet-link" href="support.html">앱 이용에 도움이 필요하신가요? <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
@@ -172,19 +180,30 @@
 
     <footer class="site-footer">
       <div class="shell footer-top">
-        <a class="brand brand-inverse" href="/" aria-label="DayPixel 홈">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name">DayPixel</span>
-        </a>
+        <div>
+          <a class="brand" href="/" aria-label="DayPixel 홈">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-name">DayPixel</span>
+          </a>
+        </div>
         <nav class="footer-links" aria-label="하단 메뉴">
-          <a href="/poff/">포프(Poff) 다운로드</a>
           <a href="support.html">고객지원</a>
           <a href="privacy.html">개인정보 처리방침</a>
-          <a href="app-ads.txt">app-ads.txt</a>
+          <a href="terms.html">이용약관</a>
+          <a href="data-deletion.html">계정·데이터 삭제</a>
         </nav>
       </div>
       <div class="shell footer-bottom">
-        <span>© 2026 DayPixel. All rights reserved.</span>
+        <span>© 2026 DayPixel</span>
+        <details class="company-details">
+          <summary>회사 정보</summary>
+          <dl>
+            <div><dt>상호</dt><dd>데이픽셀 (DayPixel)</dd></div>
+            <div><dt>대표</dt><dd>이하은</dd></div>
+            <div><dt>소재지</dt><dd>서울특별시 성북구</dd></div>
+            <div><dt>문의</dt><dd><a href="mailto:eunhafactory@daypixel.kr">eunhafactory@daypixel.kr</a></dd></div>
+          </dl>
+        </details>
         <span>일상을 만듭니다</span>
       </div>
     </footer>

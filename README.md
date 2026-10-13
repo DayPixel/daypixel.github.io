@@ -1,6 +1,6 @@
 # DayPixel 회사 및 서비스 사이트
 
-DayPixel의 공식 회사 소개와 주섬주섬·하나둘 서비스 지원을 제공하는 정적 사이트입니다.
+DayPixel의 공식 회사 소개와 주섬주섬·하나둘·포프 제품 안내를 제공하는 정적 사이트입니다.
 
 ## 포함 파일
 
@@ -46,6 +46,6 @@ google.com, pub-8339330183989965, DIRECT, f08c47fec0942fa0
 - 서비스 약관: `https://daypixel.kr/terms.html`
 - 사용자 데이터 삭제 안내: `https://daypixel.kr/data-deletion.html`
 
-`node --test tests/legal.test.mjs`로 문서 구조와 내부 링크를 확인합니다.
+`node --test tests/*.test.mjs`로 홈페이지, 제품 링크, 회사 정보 접힘 영역과 지원·정책 문서를 확인합니다.
 GitHub Pages는 `main` 루트를 게시하므로 푸시 전에 내용과 공개 범위를 검토합니다.
 정책 문서는 법적 적합성 검토나 Meta 심사 승인을 대신하지 않습니다.
