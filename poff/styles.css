@@ -295,6 +295,7 @@ html:has(.film-dialog[open]) { overflow: hidden; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .button:hover, .button:hover .arrow { transform: none; }
 }
+.support-wrap { margin-top: 8px; margin-bottom: 40px; }
 .support-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 32px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; background: rgb(242 244 243 / 3%); }
 .support-card h3 { margin: 0; font-size: 16px; letter-spacing: -.3px; }
 .support-card p { margin: 8px 0 0; font-size: 13px; line-height: 1.7; color: var(--muted); max-width: 520px; }
